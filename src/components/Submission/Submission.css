@@ -1,0 +1,32 @@
+.form-submit {
+  margin-top:30px !important;
+  margin-bottom:30px !important;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+}
+
+.input {
+  height: 35px;
+  width: 300px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  text-align: center;
+  flex-grow: 2;
+}
+
+.submit-button {
+  margin-left: -2px;
+  height: 35px;
+  width: 100px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: rgb(72, 72, 247);
+  color: white;
+}
+
+.submit-button:hover {
+  background-color:blue
+}

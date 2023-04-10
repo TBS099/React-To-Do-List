@@ -1,0 +1,51 @@
+.row.wide {
+    border-bottom:solid 1px;
+    border-left:5px;
+    border-right:5px;
+}
+
+.buttons-container{
+    display: flex;
+    align-items: center;
+    width:125px !important;
+}
+
+.delete-button {
+    background-color: rgb(97, 97, 97, 0.2);
+    color: #454E53;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+.done-button {
+    background-color: rgb(97, 97, 97, 0.2);
+    color: #454E53;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    margin-right:10px;
+    font-size: 12px;
+}
+
+.delete-button:hover, .done-button:hover{
+    background-color: rgb(97, 97, 97, 0.5);
+    cursor: pointer;
+}
+
+.wide {
+    width:600px;
+}
+
+.texts {
+    text-align: center;
+    width:445px !important;
+    text-align: center;
+    overflow-wrap:anywhere;
+}
+
+.sn-width {
+    width:30px !important;
+}
+

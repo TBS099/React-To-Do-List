@@ -1,0 +1,13 @@
+main {
+  margin-top: 50px;
+}
+
+.page-body {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.page-header {
+  text-align: center;
+}
