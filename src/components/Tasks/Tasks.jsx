@@ -26,7 +26,7 @@ class Tasks extends React.Component {
             <h5 className='sn-width'>{this.props.id}</h5>
             <h5 className='texts'>{this.props.text}</h5>
             <div className="buttons-container">
-                <button className="done-button" onClick={this.markDone}>Completed</button>
+                <button className="done-button" onClick={this.markDone}>Completed?</button>
                 <button className="delete-button" onClick={() => this.props.removeTask(this.props.id)}>X</button>
             </div>
         </div>
