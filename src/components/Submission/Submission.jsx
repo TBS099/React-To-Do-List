@@ -1,5 +1,6 @@
 import React from "react";
 import "./Submission.css";
+import Cookies from "js-cookie";
 
 class Submission extends React.Component {
   constructor(props) {
@@ -7,7 +8,7 @@ class Submission extends React.Component {
 
     this.state = {
       taskCount: 1,
-      formInput:""
+      formInput: "",
     };
 
     this.inputChange = this.inputChange.bind(this);
@@ -16,21 +17,43 @@ class Submission extends React.Component {
 
   inputChange(event) {
     this.setState({ formInput: event.target.value });
-  } 
+  }
 
   addTask(e) {
     e.preventDefault();
-    const newItem = {
-        text:this.state.formInput,
-        id: this.state.taskCount,
-        key: Date.now()
+    let count = Cookies.get("count");
+    if (count) {
+      count = parseInt(count);
+      count = count + 1;
+    } else {
+      count = 1;
     }
-    this.setState({
-      taskCount: this.state.taskCount + 1,
-      formInput:""
-    });
-    this.props.addItem(newItem);
 
+    this.setState({
+      formInput: "",
+    });
+
+    const newItem = {
+      text: this.state.formInput,
+      id: count,
+      key: Date.now(),
+    };
+
+    const tasksCookie = Cookies.get("tasks");
+    let updatedTasks = [];
+
+    if (tasksCookie) {
+      const tasks = JSON.parse(tasksCookie);
+      tasks.push(newItem);
+      updatedTasks = JSON.stringify(tasks);
+    } else {
+      updatedTasks = JSON.stringify([newItem]);
+    }
+
+    Cookies.set("tasks", updatedTasks);
+    Cookies.set("count", count); // Set the "count" cookie with the updated count value
+    Cookies.set("newtask", JSON.stringify(newItem));
+    this.props.addItem(newItem);
   }
 
   render() {
@@ -45,7 +68,9 @@ class Submission extends React.Component {
             placeholder="Enter Task Here"
             required
           ></input>
-          <button type="submit" className="submit-button">Submit</button>
+          <button type="submit" className="submit-button">
+            Submit
+          </button>
         </form>
       </div>
     );
