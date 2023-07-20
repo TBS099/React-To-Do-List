@@ -20,7 +20,7 @@
 }
 
 .done-button {
-    background-color: rgb(97, 97, 97, 0.2);
+    background-color: #fefefe;
     color: #454E53;
     border: none;
     outline: none;
@@ -30,7 +30,7 @@
 }
 
 .delete-button:hover, .done-button:hover{
-    background-color: rgb(97, 97, 97, 0.5);
+    background-color: rgba(249, 249, 249, 0.5);
     cursor: pointer;
 }
 
